@@ -36,5 +36,39 @@ body {
   font-size: 1.4rem;
   color: var(--very-dark-blue);
   background-color: var(--very-light-gray);
-  padding: 0 1rem;
+}
+
+.container {
+  min-width: 37.5rem;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.4rem 2rem;
+  background-color: var(--white);
+  box-shadow: 0 0 1rem 0.2rem rgba(0, 0, 0, 0.1);
+}
+
+.header__title {
+  font-size: 2rem;
+}
+
+.dark-mode {
+  padding: 1.2rem 2rem;
+  width: 13rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  outline: none;
+  border: transparent;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.dark-mode:hover {
+  border-bottom: 1px #000 solid;
 }
