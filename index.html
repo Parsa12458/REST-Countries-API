@@ -29,6 +29,24 @@
           <span>Dark Mode</span>
         </button>
       </header>
+      <form class="form">
+        <div class="form__search-container">
+          <ion-icon name="search-outline"></ion-icon>
+          <input
+            type="search"
+            class="form__search-input"
+            placeholder="Search for a country..."
+          />
+        </div>
+        <select name="region" class="form__filter">
+          <option value="" class="filter__option">Filter by Region</option>
+          <option value="africa" class="filter__option">Africa</option>
+          <option value="america" class="filter__option">America</option>
+          <option value="asia" class="filter__option">Asia</option>
+          <option value="europe" class="filter__option">Europe</option>
+          <option value="oceania" class="filter__option">Oceania</option>
+        </select>
+      </form>
     </div>
   </body>
 </html>

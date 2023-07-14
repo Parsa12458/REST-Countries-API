@@ -58,7 +58,7 @@ body {
 
 .dark-mode {
   padding: 1.2rem 2rem;
-  width: 13rem;
+  width: 12.7rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -71,4 +71,48 @@ body {
 
 .dark-mode:hover {
   border-bottom: 1px #000 solid;
+}
+
+/* FORM */
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+  padding: 0 2rem;
+}
+
+.form__search-container {
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 1rem 0.1rem rgba(0, 0, 0, 0.05);
+  margin-bottom: 4rem;
+  background-color: #fff;
+  border-radius: 0.3rem;
+}
+
+.form__search-container ion-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  color: #999;
+  margin-left: 2rem;
+}
+
+.form__search-input {
+  padding: 1.5rem 0 1.5rem 2rem;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.form__search-input::placeholder {
+  color: #999;
+}
+
+.form__filter {
+  width: max-content;
+  padding: 1.4rem 6rem;
+  padding-left: 2rem;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 1rem 0.1rem rgba(0, 0, 0, 0.1);
 }
