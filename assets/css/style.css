@@ -116,3 +116,46 @@ body {
   outline: none;
   box-shadow: 0 0 1rem 0.1rem rgba(0, 0, 0, 0.1);
 }
+
+/* CARDS */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+  padding: 0 4rem;
+  gap: 3rem;
+}
+
+.card {
+  display: grid;
+  grid-template-rows: repeat(3, max-content);
+  justify-items: start;
+  width: 25rem;
+  box-shadow: 0 0 2rem 0.1rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  padding-bottom: 2rem;
+}
+
+.card__flag {
+  width: 100%;
+}
+
+.card__title {
+  padding: 2rem 0 0 2rem;
+}
+
+.card__info-container {
+  padding: 2rem;
+  line-height: 1.8;
+}
+
+.card-info {
+  font-weight: 600;
+}
+
+.card-info span {
+  font-weight: 300;
+}
