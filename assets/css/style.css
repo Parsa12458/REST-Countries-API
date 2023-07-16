@@ -64,7 +64,8 @@ body {
   justify-content: space-between;
   background: none;
   outline: none;
-  border: transparent;
+  border: none;
+  border-bottom: 1px transparent solid;
   transition: all 0.3s;
   cursor: pointer;
 }
@@ -124,7 +125,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 5rem;
-  padding: 0 4rem;
+  padding: 0 4rem 5rem 4rem;
   gap: 3rem;
 }
 
@@ -158,4 +159,68 @@ body {
 
 .card-info span {
   font-weight: 300;
+}
+
+/* MODAL */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 3rem;
+  background-color: #fff;
+  box-shadow: 0 0 0.5rem 0.1rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.3rem;
+}
+
+.btn--close {
+  width: 11rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5rem;
+  font-weight: 600;
+}
+
+.modal {
+  background-color: var(--white);
+  padding: 0 2.5rem 5rem 2.5rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.modal__flag {
+  width: 100%;
+}
+
+.modal__title {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.modal__info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+}
+
+.modal-info {
+  font-weight: 600;
+}
+
+.modal-info span {
+  font-weight: 300;
+}
+
+.modal__border {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
