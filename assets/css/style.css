@@ -142,10 +142,17 @@ body {
 
 .card__flag {
   width: 100%;
+  height: 15rem;
+  object-fit: cover;
 }
 
 .card__title {
-  padding: 2rem 0 0 2rem;
+  padding: 2rem 2rem 0 2rem;
+  /* display: block; */
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card__info-container {
