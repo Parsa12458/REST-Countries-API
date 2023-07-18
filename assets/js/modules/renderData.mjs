@@ -1,17 +1,14 @@
 const cardsContainer = document.querySelector(".cards");
+export default function (dataArr) {
+  const spinner = document.querySelector(".spinner");
+  if (spinner) spinner.remove();
 
-export default async function (url) {
-  try {
-    const res = await fetch(url);
-    const data = await res.json();
-    console.log(data);
-
-    data.forEach((country) => {
-      const html = `
+  dataArr.forEach((country) => {
+    const html = `
       <div class="card">
           <img src="${country.flags.png}" alt="${
-        country.flags.alt
-      }" class="card__flag" />
+      country.flags.alt
+    }" class="card__flag" />
           <h3 class="card__title">${country.name.official}</h3>
           <div class="card__info-container">
             <p class="card-info card__population">
@@ -29,9 +26,6 @@ export default async function (url) {
       </div>
     `;
 
-      cardsContainer.insertAdjacentHTML("beforeend", html);
-    });
-  } catch (err) {
-    console.error(err, "🟥🟥🟥");
-  }
+    cardsContainer.insertAdjacentHTML("beforeend", html);
+  });
 }
