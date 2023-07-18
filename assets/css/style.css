@@ -249,3 +249,8 @@ body {
     transform: rotate(360deg);
   }
 }
+
+.error {
+  font-size: 2rem;
+  font-weight: 600;
+}
