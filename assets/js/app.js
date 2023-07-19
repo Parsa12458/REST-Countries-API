@@ -8,12 +8,12 @@ const searchInput = document.querySelector(".form__search-input");
 const renderAllCountries = async function () {
   try {
     const data = await fetchData("https://restcountries.com/v3.1/all");
-    renderData(data);
+    data && renderData(data);
   } catch (err) {
     console.error(err, "🟥🟥🟥");
   }
 };
-// renderAllCountries();
+renderAllCountries();
 
 const renderSearchResult = async function (e) {
   try {
