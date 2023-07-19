@@ -4,16 +4,17 @@ import renderError from "./modules/renderError.mjs";
 
 const form = document.querySelector(".form");
 const searchInput = document.querySelector(".form__search-input");
+const regionInput = document.querySelector(".form__filter");
 
 const renderAllCountries = async function () {
   try {
     const data = await fetchData("https://restcountries.com/v3.1/all");
     data && renderData(data);
   } catch (err) {
+    renderError(err.message);
     console.error(err, "🟥🟥🟥");
   }
 };
-renderAllCountries();
 
 const renderSearchResult = async function (e) {
   try {
@@ -34,4 +35,24 @@ const renderSearchResult = async function (e) {
   }
 };
 
-form.addEventListener("submit", renderSearchResult);
+const renderByRegion = async function (e) {
+  try {
+    const region = e.target.options[e.target.selectedIndex].value;
+    if (region === "") return renderAllCountries();
+    const data = await fetchData(
+      `https://restcountries.com/v3.1/region/${region}`
+    );
+    data & renderData(data);
+  } catch (err) {
+    console.error(err, "🟥🟥🟥");
+    renderError(err.message);
+  }
+};
+
+const init = function () {
+  renderAllCountries();
+  form.addEventListener("submit", renderSearchResult);
+  regionInput.addEventListener("change", renderByRegion);
+};
+
+init();

@@ -1,4 +1,3 @@
-import renderError from "./renderError.mjs";
 import renderSpinner from "./renderSpinner.mjs";
 export default async function (url, value) {
   try {
@@ -16,6 +15,6 @@ export default async function (url, value) {
     const data = await res.json();
     return data;
   } catch (err) {
-    renderError(err.message);
+    throw err;
   }
 }
