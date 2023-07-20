@@ -5,7 +5,7 @@ export default function (dataArr) {
 
   dataArr.forEach((country) => {
     const html = `
-      <div class="card">
+      <div class="card" data-code="${country.cca2}">
           <img src="${country.flags.png}" alt="${
       country.flags.alt
     }" class="card__flag" />
