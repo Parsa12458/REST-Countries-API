@@ -8,13 +8,12 @@ const searchInput = document.querySelector(".form__search-input");
 const regionInput = document.querySelector(".form__filter");
 const cardsContainer = document.querySelector(".cards");
 
-const renderAllCountries = async function () {
+export const renderAllCountries = async function () {
   try {
     const data = await fetchData("https://restcountries.com/v3.1/all");
     data && renderData(data);
   } catch (err) {
     renderError(err.message);
-    console.error(err, "🟥🟥🟥");
   }
 };
 
@@ -25,7 +24,6 @@ const renderSearchResult = async function (e) {
       "https://restcountries.com/v3.1/name/",
       searchInput.value
     );
-    console.log(data);
     if (data.status === 404)
       throw new Error(
         `No countries found matching "${searchInput.value}". Please try again!`
@@ -35,7 +33,6 @@ const renderSearchResult = async function (e) {
     searchInput.value = "";
   } catch (err) {
     renderError(err.message);
-    console.error(err, "🟥🟥🟥");
   }
 };
 
@@ -48,15 +45,13 @@ const renderByRegion = async function (e) {
     );
     data & renderData(data);
   } catch (err) {
-    console.error(err, "🟥🟥🟥");
     renderError(err.message);
   }
 };
 
-const closeModal = function () {
+export const closeModal = function () {
   renderAllCountries();
   history.back();
-  console.log("CLOSE-BUTTON");
 };
 
 const renderDetailModal = async function (e) {
@@ -66,18 +61,13 @@ const renderDetailModal = async function (e) {
     if (!card) return;
     const { code } = card.dataset;
     const data = await fetchData(`https://restcountries.com/v3.1/alpha/`, code);
-    console.log(data);
 
     // Render the detail page for clicked country
     renderDetail(data);
 
     // Update the URL
     history.pushState(null, "", `?country=${code}`);
-
-    // Attach event handler for close button
-    document.querySelector(".btn--close").addEventListener("click", closeModal);
   } catch (err) {
-    console.error(err, "🟥🟥🟥");
     renderError(err.message);
   }
 };
@@ -88,18 +78,12 @@ const loadDetailByURL = async function () {
     const countryCode = new URLSearchParams(window.location.search).get(
       "country"
     );
-    if (countryCode) {
+    if (countryCode)
       renderDetail(
         await fetchData(`https://restcountries.com/v3.1/alpha/`, countryCode)
       );
-      document
-        .querySelector(".btn--close")
-        .addEventListener("click", closeModal);
-    } else {
-      renderAllCountries();
-    }
+    else renderAllCountries();
   } catch (err) {
-    console.error(err, "🟥🟥🟥");
     renderError(err.message);
   }
 };

@@ -1,7 +1,7 @@
 import renderSpinner from "./renderSpinner.mjs";
-export default async function (url, value) {
+export default async function (url, value, spinner = true) {
   try {
-    renderSpinner();
+    if (spinner) renderSpinner();
     const res = await Promise.race([
       value ? fetch(`${url}${value}`) : fetch(url),
       new Promise((_, reject) =>
@@ -11,7 +11,6 @@ export default async function (url, value) {
         )
       ),
     ]);
-    // const res = value ? await fetch(`${url}${value}`) : await fetch(url);
     const data = await res.json();
     return data;
   } catch (err) {
