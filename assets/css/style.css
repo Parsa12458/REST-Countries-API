@@ -59,7 +59,7 @@ body {
 
 .dark-mode {
   padding: 1.2rem 2rem;
-  width: 12.7rem;
+  width: 12.9rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -69,6 +69,10 @@ body {
   border-bottom: 1px transparent solid;
   transition: all 0.3s;
   cursor: pointer;
+}
+
+.dark-mode span {
+  font-size: 1.3rem;
 }
 
 .dark-mode:hover {
@@ -209,6 +213,7 @@ body {
 .modal__flag {
   width: 70vw;
   object-fit: cover;
+  align-self: center;
 }
 
 .modal__title {
@@ -308,4 +313,79 @@ body.dark-theme .modal {
 body.dark-theme .btn {
   background-color: var(--blue);
   color: var(--white);
+}
+
+/* RESPONSIVE */
+@media only screen and (min-width: 38.125em) {
+  .form {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .form__search-container {
+    margin-bottom: 0;
+    width: 50%;
+  }
+
+  .form__filter {
+    box-shadow: 0 0 1rem 0.1rem rgba(0, 0, 0, 0.05);
+  }
+}
+
+@media only screen and (min-width: 75em) {
+  html {
+    font-size: 68%;
+  }
+
+  .form {
+    padding: 0 4rem;
+  }
+
+  .header {
+    padding: 2.4rem 4rem;
+  }
+
+  .dark-mode {
+    width: 13rem;
+  }
+
+  .modal-container {
+    flex-direction: row;
+    gap: 10rem;
+  }
+
+  .modal__flag {
+    align-self: start;
+    width: 40vw;
+  }
+
+  .modal__info-container {
+    gap: 4rem;
+    flex-direction: row;
+    line-height: 2;
+  }
+}
+
+@media only screen and (min-width: 120em) {
+  html {
+    font-size: 80%;
+  }
+
+  .modal-container {
+    gap: 15rem;
+  }
+
+  .modal__info-container {
+    gap: 8rem;
+  }
+
+  .modal__flag {
+    width: 70rem;
+  }
+
+  .modal__border {
+    flex-direction: row;
+    align-items: center;
+  }
 }
