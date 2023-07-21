@@ -54,6 +54,7 @@ body {
 
 .header__title {
   font-size: 2rem;
+  cursor: pointer;
 }
 
 .dark-mode {
@@ -206,7 +207,8 @@ body {
 }
 
 .modal__flag {
-  width: 100%;
+  width: 70vw;
+  object-fit: cover;
 }
 
 .modal__title {
@@ -263,4 +265,47 @@ body {
 .error {
   font-size: 2rem;
   font-weight: 600;
+}
+
+/* DARK MODE */
+body.dark-theme {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+
+body.dark-theme .header {
+  background-color: var(--blue);
+  box-shadow: 0 0 1rem 0.2rem rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme input,
+body.dark-theme select {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+body.dark-theme .form__search-container {
+  background-color: var(--blue);
+}
+
+body.dark-theme .card {
+  box-shadow: 0 0 2rem 0.1rem rgba(0, 0, 0, 0.4);
+}
+
+body.dark-theme .dark-mode span,
+body.dark-theme .dark-mode ion-icon {
+  color: #fff;
+}
+
+body.dark-theme .dark-mode:hover {
+  border-bottom: 1px #fff solid;
+}
+
+body.dark-theme .modal {
+  background-color: var(--dark-blue);
+}
+
+body.dark-theme .btn {
+  background-color: var(--blue);
+  color: var(--white);
 }

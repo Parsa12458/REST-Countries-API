@@ -2,11 +2,14 @@ import renderData from "./modules/renderData.mjs";
 import fetchData from "./modules/fetchData.mjs";
 import renderError from "./modules/renderError.mjs";
 import renderDetail from "./modules/renderDetail.mjs";
+import switchTheme from "./modules/switchTheme.mjs";
 
 const form = document.querySelector(".form");
 const searchInput = document.querySelector(".form__search-input");
 const regionInput = document.querySelector(".form__filter");
 const cardsContainer = document.querySelector(".cards");
+const darkModeBtn = document.querySelector(".dark-mode");
+const logo = document.querySelector(".header__title");
 
 export const renderAllCountries = async function () {
   try {
@@ -89,7 +92,15 @@ const loadDetailByURL = async function () {
 };
 
 const init = function () {
+  if (localStorage.getItem("darkMode") === "true") {
+    document.body.classList.add("dark-theme");
+    document.querySelector(".dark-mode ion-icon").name = "moon";
+  } else {
+    document.querySelector(".dark-mode ion-icon").name = "moon-outline";
+  }
   loadDetailByURL();
+  darkModeBtn.addEventListener("click", switchTheme);
+  logo.addEventListener("click", renderAllCountries);
   form.addEventListener("submit", renderSearchResult);
   regionInput.addEventListener("change", renderByRegion);
   cardsContainer.addEventListener("click", renderDetailModal);
