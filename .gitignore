@@ -8,12 +8,8 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-package.json
-package-lock.json
-vite.config.js
-.babelrc
-dist
 dist-ssr
+design-guide
 *.local
 
 # Editor directories and files

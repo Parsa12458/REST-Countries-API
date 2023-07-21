@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="title" content="Rest Countries API" />
+    <meta
+      name="description"
+      content="Get newest Countries informations using REST API"
+    />
+    <title>Rest Countries API</title>
+    
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    
+    <script type="module" crossorigin src="/assets/index-05e9abad.js"></script>
+    <link rel="stylesheet" href="/assets/index-82ef8c24.css">
+    <script type="module">import.meta.url;import("_").catch(()=>1);async function* g(){};if(location.protocol!="file:"){window.__vite_is_modern_browser=true}</script>
+    <script type="module">!function(){if(window.__vite_is_modern_browser)return;console.warn("vite: loading legacy chunks, syntax error above and the same error below should be ignored");var e=document.getElementById("vite-legacy-polyfill"),n=document.createElement("script");n.src=e.src,n.onload=function(){System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))},document.body.appendChild(n)}();</script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="header__title">Where in the world?</h1>
+        <button class="dark-mode">
+          <ion-icon name="moon-outline"></ion-icon>
+          <span>Dark Mode</span>
+        </button>
+      </header>
+      <form class="form">
+        <div class="form__search-container">
+          <ion-icon name="search-outline"></ion-icon>
+          <input
+            type="search"
+            class="form__search-input"
+            placeholder="Search for a country..."
+          />
+        </div>
+        <select name="region" class="form__filter">
+          <option value="" class="filter__option">Filter by Region</option>
+          <option value="africa" class="filter__option">Africa</option>
+          <option value="america" class="filter__option">America</option>
+          <option value="asia" class="filter__option">Asia</option>
+          <option value="europe" class="filter__option">Europe</option>
+          <option value="oceania" class="filter__option">Oceania</option>
+        </select>
+      </form>
+      <div class="cards"></div>
+      <!-- <div class="modal hidden">
+        <span class="btn btn--close">
+          <ion-icon name="arrow-back-outline"></ion-icon>
+          <span>Back</span>
+        </span>
+
+        <div class="modal-container">
+          <img src="assets/usa-flag.jpg" alt="" class="modal__flag" />
+
+          <div class="modal__textbox">
+            <h3 class="modal__title">Belgium</h3>
+
+            <div class="modal__info-container">
+              <div>
+                <p class="modal-info modal-info--name">
+                  Native Name: <span>Belgie</span>
+                </p>
+                <p class="modal-info modal-info--population">
+                  Population: <span>11,319,511</span>
+                </p>
+                <p class="modal-info modal-info--region">
+                  Region: <span>Europe</span>
+                </p>
+                <p class="modal-info modal-info--sub-region">
+                  Sub Region: <span>Western Europe</span>
+                </p>
+                <p class="modal-info modal-info--capital">
+                  Capital: <span>Brussels</span>
+                </p>
+              </div>
+              <div>
+                <p class="modal-info modal-info--domain">
+                  Top Level Domain: <span>.be</span>
+                </p>
+                <p class="modal-info modal-info--currency">
+                  Currencies: <span>Euro</span>
+                </p>
+                <p class="modal-info modal-info--language">
+                  Languages: <span>Dutch, French, German</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="modal__border">
+              <h4>Border Countries:</h4>
+              <div>
+                <a class="btn">France</a>
+                <a class="btn">Germany</a>
+                <a class="btn">Netherlands</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+    <script nomodule>!function(){var e=document,t=e.createElement("script");if(!("noModule"in t)&&"onbeforeload"in t){var n=!1;e.addEventListener("beforeload",(function(e){if(e.target===t)n=!0;else if(!e.target.hasAttribute("nomodule")||!n)return;e.preventDefault()}),!0),t.type="module",t.src=".",e.head.appendChild(t),t.remove()}}();</script>
+    <script nomodule crossorigin id="vite-legacy-polyfill" src="/assets/polyfills-legacy-fee3d2a1.js"></script>
+    <script nomodule crossorigin id="vite-legacy-entry" data-src="/assets/index-legacy-ff703e60.js">System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))</script>
+  </body>
+</html>
