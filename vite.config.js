@@ -5,6 +5,10 @@ import autoprefixer from "autoprefixer";
 import viteImagemin from "vite-plugin-imagemin";
 
 export default defineConfig({
+  base: "",
+  build: {
+    outDir: "docs",
+  },
   // Configure Vite plugins
   plugins: [
     compression(),
